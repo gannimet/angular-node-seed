@@ -1,0 +1,24 @@
+{
+  "name": "angular-test",
+  "version": "0.0.1",
+  "authors": [
+    "gannimet <r.wotzlaw@gmail.com>"
+  ],
+  "description": "Angular.js roundtrip app",
+  "main": "app.js",
+  "license": "Do what the fuck you want to public license",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "angular": "~1.3.0",
+    "alertify": "~0.3.10",
+    "bootstrap": "~3.2.0"
+  }
+}

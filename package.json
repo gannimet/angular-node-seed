@@ -1,0 +1,25 @@
+{
+  "name": "angular-test",
+  "version": "0.0.1",
+  "private": true,
+  "description": "An Angular app using bower and covering every aspect of angular",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "mocha tests/*.js"
+  },
+  "author": "",
+  "license": "Do what the fuck you want to public license",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.6.0",
+    "mocha": "^2.0.1",
+    "should": "^4.1.0"
+  },
+  "dependencies": {
+    "express": "^4.10.0",
+    "jade": "^1.7.0"
+  }
+}
