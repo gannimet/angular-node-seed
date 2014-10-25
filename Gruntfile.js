@@ -72,9 +72,16 @@ module.exports = function(grunt) {
 				ext: '.min.js'
 			}
 		},
+		less: {
+			development: {
+				files: {
+					'static/css/custom.css': 'src/client/less/custom.less'
+				}
+			}
+		},
 		watch: {
 			sripts: {
-				files: 'src/client/**/*.js',
+				files: ['Gruntfile.js', 'src/client/**/*.js'],
 				tasks: ['build']
 			}
 		}
@@ -83,12 +90,13 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	var buildTasks = ['copy', 'jshint', 'uglify'];
+	var buildTasks = ['copy', 'jshint', 'uglify', 'less'];
 	var buildTasksPlusWatching = buildTasks;
 	buildTasksPlusWatching.push('watch');
 
 	grunt.registerTask('build', buildTasks);
-	grunt.registerTask('default', ['copy', 'jshint', 'uglify', 'watch']);
+	grunt.registerTask('default', buildTasksPlusWatching);
 };
