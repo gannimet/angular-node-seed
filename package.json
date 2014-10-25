@@ -9,7 +9,7 @@
     "start": "nodemon src/server/app.js",
     "test": "mocha src/server/tests/*.js"
   },
-  "author": "Richard Wotzlaw",
+  "author": "gannimet <info@colimit.de>",
   "license": "Do what the fuck you want to public license",
   "devDependencies": {
     "grunt": "^0.4.5",

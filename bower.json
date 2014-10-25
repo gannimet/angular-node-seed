@@ -2,7 +2,7 @@
   "name": "angular-test",
   "version": "0.0.1",
   "authors": [
-    "gannimet <r.wotzlaw@gmail.com>"
+    "gannimet <info@colimit.de>"
   ],
   "description": "Angular.js roundtrip app",
   "main": "app.js",
