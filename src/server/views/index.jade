@@ -1,0 +1,22 @@
+doctype html
+
+html(data-ng-app='webApp')
+	head
+		title My first Node/Angular/Bower/Grunt app
+
+		meta(charset='utf-8')
+		link(rel='stylesheet', type='text/css', href='/css/bootstrap.min.css')
+		link(rel='stylesheet', type='text/css', href='/css/bootstrap-theme.min.css')
+		link(rel='stylesheet', type='text/css', href='/css/alertify.core.css')
+		link(rel='stylesheet', type='text/css', href='/css/alertify.bootstrap.css')
+	body(data-ng-controller='WebCtrl')
+		.container
+			.row
+				.col-xs-12
+					h1 Hello {{entity}}
+
+		script(type='text/javascript', src='/js/jquery.min.js')
+		script(type='text/javascript', src='/js/bootstrap.min.js')
+		script(type='text/javascript', src='/js/angular.min.js')
+		script(type='text/javascript', src='/js/alertify.min.js')
+		script(type='text/javascript', src='/js/controllers.min.js')

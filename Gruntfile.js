@@ -19,14 +19,12 @@ module.exports = function(grunt) {
 						src: 'bower_components/bootstrap/dist/css/*.min.css',
 						dest: 'static/css/',
 						flatten: true
-					},
-					{
+					}, {
 						expand: true,
 						src: 'bower_components/bootstrap/dist/js/bootstrap.min.js',
 						dest: 'static/js/',
 						flatten: true
-					},
-					{
+					}, {
 						expand: true,
 						src: 'bower_components/bootstrap/dist/fonts/*',
 						dest: 'static/fonts/',
@@ -42,8 +40,7 @@ module.exports = function(grunt) {
 						src: ['alertify.core.css', 'alertify.bootstrap.css'],
 						dest: 'static/css/',
 						flatten: true
-					},
-					{
+					}, {
 						expand: true,
 						src: 'bower_components/alertify/alertify.min.js',
 						dest: 'static/js/',
@@ -64,12 +61,12 @@ module.exports = function(grunt) {
 			}
 		},
 		jshint: {
-			all: ['Gruntfile.js', 'src/js/**/*.js']
+			all: ['Gruntfile.js', 'src/**/*.js']
 		},
 		uglify: {
 			build: {
 				expand: true,
-				src: 'src/js/**/*.js',
+				src: 'src/**/*.js',
 				dest: 'static/js/',
 				flatten: true,
 				ext: '.min.js'
