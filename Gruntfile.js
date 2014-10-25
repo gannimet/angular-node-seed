@@ -71,12 +71,24 @@ module.exports = function(grunt) {
 				flatten: true,
 				ext: '.min.js'
 			}
+		},
+		watch: {
+			sripts: {
+				files: 'src/client/**/*.js',
+				tasks: ['build']
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['copy', 'jshint', 'uglify']);
+	var buildTasks = ['copy', 'jshint', 'uglify'];
+	var buildTasksPlusWatching = buildTasks;
+	buildTasksPlusWatching.push('watch');
+
+	grunt.registerTask('build', buildTasks);
+	grunt.registerTask('default', ['copy', 'jshint', 'uglify', 'watch']);
 };
