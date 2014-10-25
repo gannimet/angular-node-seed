@@ -5,7 +5,7 @@
     "gannimet <info@colimit.de>"
   ],
   "description": "Angular.js roundtrip app",
-  "main": "app.js",
+  "main": "src/server/app.js",
   "license": "Do what the fuck you want to public license",
   "private": true,
   "ignore": [
