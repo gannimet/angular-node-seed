@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 		uglify: {
 			build: {
 				expand: true,
-				src: 'src/**/*.js',
+				src: 'src/client/**/*.js',
 				dest: 'static/js/',
 				flatten: true,
 				ext: '.min.js'
@@ -94,9 +94,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	var buildTasks = ['copy', 'jshint', 'uglify', 'less'];
-	var buildTasksPlusWatching = buildTasks;
-	buildTasksPlusWatching.push('watch');
 
 	grunt.registerTask('build', buildTasks);
-	grunt.registerTask('default', buildTasksPlusWatching);
+	grunt.registerTask('default', ['build']);
 };

@@ -1,4 +1,5 @@
 var express = require('express');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -15,5 +16,7 @@ app.use(express.static(__dirname + '/../../static'));
 app.get('/', function(req, res) {
 	res.render('index');
 });
+
+app.get('/users', users.list);
 
 app.listen(3000);

@@ -1,9 +1,13 @@
 (function(window, undefined) {
 		
-	var webApp = angular.module('webApp', []);
+	var blogControllers = angular.module('blogControllers', []);
 
-	webApp.controller('WebCtrl', ['$scope', '$http', function($scope, $http) {
+	blogControllers.controller('BlogCtrl', ['$scope', 'userService', function($scope, userService) {
 		$scope.entity = 'world';
+
+		userService.allUsers().success(function(data, status) {
+			$scope.users = data.users;
+		});
 	}]);
 
 })(window);

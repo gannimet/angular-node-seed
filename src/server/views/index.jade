@@ -1,6 +1,6 @@
 doctype html
 
-html(data-ng-app='webApp')
+html(data-ng-app='blogApp')
 	head
 		title My first Node/Angular/Bower/Grunt app
 
@@ -10,14 +10,31 @@ html(data-ng-app='webApp')
 		link(rel='stylesheet', type='text/css', href='/css/alertify.core.css')
 		link(rel='stylesheet', type='text/css', href='/css/alertify.bootstrap.css')
 		link(rel='stylesheet', type='text/css', href='/css/custom.css')
-	body(data-ng-controller='WebCtrl')
+	body(data-ng-controller='BlogCtrl')
 		.container
 			.row
 				.col-xs-12
 					h1 Hello {{entity}}
+					p Alle User:
+					table.table
+						thead
+							tr
+								th ID
+								th Name
+								th E-Mail
+						tbody
+							tr(data-ng-repeat='user in users')
+								td {{user.id}}
+								td {{user.name}}
+								td
+									a(href='mailto:{{user.email}}')
+										| {{user.email}}
 
 		script(type='text/javascript', src='/js/jquery.min.js')
 		script(type='text/javascript', src='/js/bootstrap.min.js')
 		script(type='text/javascript', src='/js/angular.min.js')
 		script(type='text/javascript', src='/js/alertify.min.js')
+		script(type='text/javascript', src='/js/app.min.js')
 		script(type='text/javascript', src='/js/controllers.min.js')
+		script(type='text/javascript', src='/js/services.min.js')
+		script(type='text/javascript', src='/js/filters.min.js')
