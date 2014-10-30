@@ -63,15 +63,6 @@ module.exports = function(grunt) {
 		jshint: {
 			all: ['Gruntfile.js', 'src/**/*.js']
 		},
-		uglify: {
-			build: {
-				expand: true,
-				src: 'src/client/**/*.js',
-				dest: 'static/js/',
-				flatten: true,
-				ext: '.min.js'
-			}
-		},
 		less: {
 			development: {
 				files: {
@@ -84,6 +75,37 @@ module.exports = function(grunt) {
 				files: ['Gruntfile.js', 'src/client/**/*.js'],
 				tasks: ['build']
 			}
+		},
+		concat: {
+			options: {
+				separator: ';',
+				sourceMap: true,
+				sourceMapName: 'static/js/blogApp.js.concat.map'
+			},
+			build: {
+				src: [
+					'src/client/js/app.js',
+					'src/client/js/controllers.js',
+					'src/client/js/directives.js',
+					'src/client/js/filters.js',
+					'src/client/js/services.js'
+				],
+				dest: 'static/js/blogApp.js'
+			}
+		},
+		uglify: {
+			options: {
+				sourceMap: true,
+				sourceMapIn: 'static/js/blogApp.js.concat.map'
+			},
+			build: {
+				files: {
+					'static/js/blogApp.min.js': ['<%= concat.build.dest %>']
+				}
+			}
+		},
+		clean: {
+			build: ['static/js/blogApp.js', 'static/js/blogApp.js.concat.map']
 		}
 	});
 
@@ -92,8 +114,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 
-	var buildTasks = ['copy', 'jshint', 'uglify', 'less'];
+	var buildTasks = ['copy', 'jshint', 'concat', 'uglify', 'less', 'clean'];
 
 	grunt.registerTask('build', buildTasks);
 	grunt.registerTask('default', ['build']);

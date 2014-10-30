@@ -4,6 +4,11 @@
 
 	blogControllers.controller('BlogCtrl', ['$scope', 'userService', function($scope, userService) {
 		$scope.entity = 'world';
+		$scope.angular = {
+			name: 'Angular.js',
+			language: 'Javascript',
+			quality: 'awesome'
+		};
 
 		userService.allUsers().success(function(data, status) {
 			$scope.users = data.users;

@@ -3,7 +3,8 @@
 	var blogApp = angular.module('blogApp', [
 		'blogControllers',
 		'blogFilters',
-		'blogServices'
+		'blogServices',
+		'blogDirectives'
 	]);
 
 })(window);
