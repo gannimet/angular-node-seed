@@ -72,7 +72,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			sripts: {
-				files: ['Gruntfile.js', 'src/client/**/*.js'],
+				files: ['Gruntfile.js', 'src/client/js/**/*.js', 'src/client/less/**/*.less'],
 				tasks: ['build']
 			}
 		},
@@ -105,7 +105,8 @@ module.exports = function(grunt) {
 			}
 		},
 		clean: {
-			build: ['static/js/blogApp.js', 'static/js/blogApp.js.concat.map']
+			concatenated: ['static/js/blogApp.js', 'static/js/blogApp.js.concat.map'],
+			allStaticFiles: ['static/css/*', 'static/fonts/*', 'static/js/*']
 		}
 	});
 
@@ -117,7 +118,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 
-	var buildTasks = ['copy', 'jshint', 'concat', 'uglify', 'less', 'clean'];
+	var buildTasks = ['copy', 'jshint', 'concat', 'uglify', 'less', 'clean:concatenated'];
 
 	grunt.registerTask('build', buildTasks);
 	grunt.registerTask('default', ['build']);

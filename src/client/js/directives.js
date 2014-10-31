@@ -2,12 +2,46 @@
 
 	var blogDirectives = angular.module('blogDirectives', []);
 
-	blogDirectives.directive('angularSpec', function() {
+	blogDirectives.directive('greetAndCongrat', function() {
 		return {
-			template: '<dl><dt>Name</dt><dd>{{angular.name}}</dd>' +
-				'<dt>Sprache</dt><dd>{{angular.language}}</dd>' +
-				'<dt>Qualität</dt><dd>{{angular.quality}}</dd>' +
-				'</dl>'
+			restrict: 'EA',
+			scope: {
+				name: '@',
+				action: '&'
+			},
+			controller: ['$scope', function($scope) {
+				$scope.congrat = function() {
+					$scope.action();
+				};
+			}],
+			template: '<div class="important">Hello {{name}}!</div>' +
+				'<button data-ng-click="congrat()">Congratulate</button>'
+		};
+	});
+
+	blogDirectives.directive('listNames', function() {
+		return {
+			restrict: 'E',
+			transclude: true,
+			replace: true,
+			scope: {
+				names: '='
+			},
+			controller: ['$scope', function($scope) {
+				$scope.addName = function() {
+					if (!$scope.names) {
+						$scope.names = [];
+					}
+
+					$scope.names.push($scope.currentName);
+					$scope.currentName = '';
+				};
+			}],
+			template: '<div id="namesContainer"><label>Name: ' +
+				'<input type="text" data-ng-model="currentName" /></label>&nbsp;' +
+				'<button data-ng-click="addName()">Add name</button>' +
+				'<ul class="namesContainer"><data-ng-transclude>' +
+				'</data-ng-transclude></ul></div>'
 		};
 	});
 

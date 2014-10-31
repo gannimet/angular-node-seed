@@ -10,6 +10,7 @@ html(data-ng-app='blogApp')
 		link(rel='stylesheet', type='text/css', href='/css/alertify.core.css')
 		link(rel='stylesheet', type='text/css', href='/css/alertify.bootstrap.css')
 		link(rel='stylesheet', type='text/css', href='/css/custom.css')
+
 	body(data-ng-controller='BlogCtrl')
 		.container
 			.row
@@ -29,7 +30,9 @@ html(data-ng-app='blogApp')
 								td
 									a(href='mailto:{{user.email}}')
 										| {{user.email}}
-					div(angular-spec)
+					data-greet-and-congrat(name='Torsten', action='congratulate(36)')
+					data-list-names(names='names')
+						li(data-ng-repeat='name in names') {{name}}
 
 		script(type='text/javascript', src='/js/jquery.min.js')
 		script(type='text/javascript', src='/js/bootstrap.min.js')
