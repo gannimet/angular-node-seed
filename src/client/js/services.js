@@ -8,4 +8,10 @@
 		};
 	}]);
 
+	blogServices.service('entryService', ['$http', function($http) {
+		this.allEntries = function() {
+			return $http.get('/entries');
+		};
+	}]);
+
 })(window);

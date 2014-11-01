@@ -1,5 +1,6 @@
 var express = require('express');
 var users = require('./routes/users');
+var entries = require('./routes/entries');
 var partials = require('./routes/partials');
 
 var app = express();
@@ -19,6 +20,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/users', users.list);
+app.get('/entries', entries.list);
 app.get('/partials/blog', partials.blog);
 app.get('/partials/entry', partials.entry);
 
