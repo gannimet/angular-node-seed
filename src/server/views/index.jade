@@ -11,31 +11,15 @@ html(data-ng-app='blogApp')
 		link(rel='stylesheet', type='text/css', href='/css/alertify.bootstrap.css')
 		link(rel='stylesheet', type='text/css', href='/css/custom.css')
 
-	body(data-ng-controller='BlogCtrl')
+	body
 		.container
 			.row
 				.col-xs-12
-					h1 Hello {{entity}}
-					p Alle User:
-					table.table
-						thead
-							tr
-								th ID
-								th Name
-								th E-Mail
-						tbody
-							tr(data-ng-repeat='user in users')
-								td {{user.id}}
-								td {{user.name}}
-								td
-									a(href='mailto:{{user.email}}')
-										| {{user.email}}
-					data-greet-and-congrat(name='Torsten', action='congratulate(36)')
-					data-list-names(names='names')
-						li(data-ng-repeat='name in names') {{name}}
+					.view-frame(data-ng-view)
 
 		script(type='text/javascript', src='/js/jquery.min.js')
 		script(type='text/javascript', src='/js/bootstrap.min.js')
 		script(type='text/javascript', src='/js/angular.min.js')
+		script(type='text/javascript', src='/js/angular-route.min.js')
 		script(type='text/javascript', src='/js/alertify.min.js')
 		script(type='text/javascript', src='/js/blogApp.min.js')

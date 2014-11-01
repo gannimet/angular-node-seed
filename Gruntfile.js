@@ -58,6 +58,17 @@ module.exports = function(grunt) {
 						flatten: true
 					}
 				]
+			},
+			angular_route: {
+				files: [
+					{
+						expand: true,
+						cwd: 'bower_components/angular-route/',
+						src: ['angular-route.min.js', 'angular-route.min.js.map'],
+						dest: 'static/js/',
+						flatten: true
+					}
+				]
 			}
 		},
 		jshint: {
