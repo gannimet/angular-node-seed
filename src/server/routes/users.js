@@ -1,24 +1,16 @@
-var users = [
-	{
-		id: 1,
-		name: 'Hans',
-		email: 'hans@wurst.de'
-	}, {
-		id: 2,
-		name: 'Torsten',
-		email: 'torsten@web.de'
-	}, {
-		id: 3,
-		name: 'Willi',
-		email: 'fuenf@gegen.willi'
-	}
-];
+var fs = require('fs');
 
 module.exports = {
 
-	list: function(req, res) {
-		res.json({
-			users: users
+	allUsers: function(req, res) {
+		fs.readFile('src/server/json/users.json', function(err, data) {
+			if (err) {
+				res.status(500).json({
+					error: 'File users.json not found'
+				});
+			} else {
+				res.status(200).json(JSON.parse(data));
+			}
 		});
 	}
 
