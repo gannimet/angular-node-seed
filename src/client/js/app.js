@@ -19,6 +19,7 @@
 			redirectTo: '/blog'
 		});
 
+		// Regular URLs instead of hashbang URLs
 		$locationProvider.html5Mode(true);
 	}]);
 
