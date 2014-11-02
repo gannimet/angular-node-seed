@@ -20,9 +20,19 @@ app.get('/', function(req, res) {
 	res.render('index');
 });
 
-app.get('/users', users.allUsers);
-app.get('/entries', entries.allEntries);
+app.get('/api/users', users.allUsers);
+
+app.get('/api/entries', entries.allEntries);
+app.get('/api/entry/:entryID', entries.entryByID);
+
 app.get('/partials/blog', partials.blog);
 app.get('/partials/entry', partials.entry);
+
+// Catch-all for non-matching URLs
+// Enables refresh on client-side (URLs would
+// otherwise be sent to the server)
+app.use(function(req, res) {
+	res.render('index');
+});
 
 app.listen(3000);

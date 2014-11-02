@@ -4,13 +4,17 @@
 
 	blogServices.service('userService', ['$http', function($http) {
 		this.allUsers = function() {
-			return $http.get('/users');
+			return $http.get('/api/users');
 		};
 	}]);
 
 	blogServices.service('entryService', ['$http', function($http) {
 		this.allEntries = function() {
-			return $http.get('/entries');
+			return $http.get('/api/entries');
+		};
+
+		this.entryByID = function(entryID) {
+			return $http.get('/api/entry/' + entryID);
 		};
 	}]);
 

@@ -8,7 +8,7 @@
 		'blogDirectives'
 	]);
 
-	blogApp.config(['$routeProvider', function($routeProvider) {
+	blogApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 		$routeProvider.when('/blog', {
 			templateUrl: '/partials/blog',
 			controller: 'BlogCtrl'
@@ -18,6 +18,8 @@
 		}).otherwise({
 			redirectTo: '/blog'
 		});
+
+		$locationProvider.html5Mode(true);
 	}]);
 
 })(window);
