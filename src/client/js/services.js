@@ -2,19 +2,23 @@
 
 	var blogServices = angular.module('blogServices', []);
 
-	blogServices.service('userService', ['$http', function($http) {
-		this.allUsers = function() {
-			return $http.get('/api/users');
+	blogServices.factory('userService', ['$http', function($http) {
+		return {
+			allUsers: function() {
+				return $http.get('/api/users');
+			}
 		};
 	}]);
 
-	blogServices.service('entryService', ['$http', function($http) {
-		this.allEntries = function() {
-			return $http.get('/api/entries');
-		};
+	blogServices.factory('entryService', ['$http', function($http) {
+		return {
+			allEntries: function() {
+				return $http.get('/api/entries');
+			},
 
-		this.entryByID = function(entryID) {
-			return $http.get('/api/entry/' + entryID);
+			entryByID: function(entryID) {
+				return $http.get('/api/entry/' + entryID);
+			}
 		};
 	}]);
 
