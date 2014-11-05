@@ -27,7 +27,9 @@ describe('unit test for blog controller', function() {
 			entries: ['just a test']
 		};
 
-		deferred.resolve(testData);
+		deferred.resolve({
+			data: testData
+		});
 		scope.$digest();
 
 		expect(entryServiceMock.allEntries).toHaveBeenCalled();
