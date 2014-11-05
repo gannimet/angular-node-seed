@@ -5,9 +5,7 @@
 	blogServices.factory('userService', ['$http', function($http) {
 		return {
 			allUsers: function() {
-				return $http.get('/api/users').then(function(data) {
-					return data.users;
-				});
+				return $http.get('/api/users');
 			}
 		};
 	}]);
@@ -19,9 +17,7 @@
 			},
 
 			entryByID: function(entryID) {
-				return $http.get('/api/entry/' + entryID).then(function(data) {
-					return data.entry;
-				});
+				return $http.get('/api/entry/' + entryID);
 			}
 		};
 	}]);

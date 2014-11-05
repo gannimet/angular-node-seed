@@ -24,15 +24,15 @@ describe('unit test for blog controller', function() {
 
 	it('should assign data to scope after calling EntryService', function() {
 		var testData = {
-			entries: ['just a test']
+			data: {
+				entries: ['just a test']
+			}
 		};
 
-		deferred.resolve({
-			data: testData
-		});
+		deferred.resolve(testData);
 		scope.$digest();
 
 		expect(entryServiceMock.allEntries).toHaveBeenCalled();
-		expect(scope.entries).toBe(testData.entries);
+		expect(scope.entries).toBe(testData.data.entries);
 	});
 });
