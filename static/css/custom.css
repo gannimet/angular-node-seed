@@ -4,3 +4,7 @@ h1 {
 .important {
   color: #ee3322;
 }
+.author {
+  color: #777777;
+  margin-bottom: 10px;
+}

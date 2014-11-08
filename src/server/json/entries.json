@@ -6,15 +6,13 @@
             "text": "Angular.js is the best client side framework around.",
             "author": 2,
             "createdAt": "2014-10-14T15:26:54.274Z"
-        },
-        {
+        }, {
             "id": 2,
             "title": "So is node.js",
             "text": "node.js is the best server side framework around",
             "author": 3,
             "createdAt": "2014-10-27T13:38:07.172Z"
-        },
-        {
+        }, {
             "id": 3,
             "title": "Teach me how to code",
             "text": "I really wanna learn it.",

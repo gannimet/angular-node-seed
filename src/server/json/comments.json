@@ -1,0 +1,35 @@
+{
+	"comments": [
+		{
+			"id": 1,
+			"entry": 1,
+			"author": 3,
+			"text": "I whole-heartedly agree!",
+			"createdAt": "2014-10-15T11:14:32.861Z"
+		}, {
+			"id": 2,
+			"entry": 1,
+			"author": 1,
+			"text": "Nothing comes even close.",
+			"createdAt": "2014-10-15T21:35:02.116Z"
+		}, {
+			"id": 3,
+			"entry": 3,
+			"author": 2,
+			"text": "Alright, what language do you wanna learn?",
+			"createdAt": "2014-10-30T20:46:51.337Z"
+		}, {
+			"id": 4,
+			"entry": 3,
+			"author": 1,
+			"text": "Javascript of course!",
+			"createdAt": "2014-10-30T21:52:17.725Z"
+		}, {
+			"id": 5,
+			"entry": 3,
+			"author": 2,
+			"text": "Awesome choice, mate!",
+			"createdAt": "2014-10-30T22:01:15.562Z"
+		}
+	]
+}

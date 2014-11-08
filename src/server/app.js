@@ -24,6 +24,7 @@ app.get('/api/users', users.allUsers);
 
 app.get('/api/entries', entries.allEntries);
 app.get('/api/entry/:entryID', entries.entryByID);
+app.get('/api/entry/:entryID/comments', comments.commentsByEntryID);
 
 app.get('/partials/blog', partials.blog);
 app.get('/partials/entry', partials.entry);

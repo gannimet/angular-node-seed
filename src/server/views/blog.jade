@@ -3,4 +3,4 @@
 		h1 All entries
 		ul
 			li(data-ng-repeat='entry in entries')
-				a(href=('/entry/{{entry.id}}')) {{entry.title}}
+				a(href=('/entry/{{entry.id}}')) {{entry.title}} (by {{entry.author.name}})

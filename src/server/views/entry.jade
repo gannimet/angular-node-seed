@@ -1,6 +1,8 @@
 .row
 	.col-xs-12
 		h1 {{entry.title}}
+		.author
+			| Written by {{entry.author.name}}
 		p {{entry.text}}
 		footer
 			a(href='/blog') back to entry list

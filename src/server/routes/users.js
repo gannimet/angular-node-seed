@@ -1,15 +1,15 @@
-var fs = require('fs');
+var jsonLoader = require('../util/jsonLoader');
 
 module.exports = {
 
 	allUsers: function(req, res) {
-		fs.readFile('src/server/json/users.json', function(err, data) {
+		jsonLoader.loadUsers(function(err, usersData) {
 			if (err) {
 				res.status(500).json({
-					error: 'File users.json not found'
+					error: err
 				});
 			} else {
-				res.status(200).json(JSON.parse(data));
+				res.status(200).json(usersData);
 			}
 		});
 	}
