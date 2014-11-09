@@ -1,8 +1,8 @@
-## Angular.js/node.js seed project
+# Angular.js/node.js seed project
 
 A skeleton project for projects using node.js for the backend, and Angular.js for the frontend.
 
-# Installation
+## Installation
 
 This project requires node.js, Bower and the Grunt command line client to be installed. If you have done so, clone the project and do the following:
 
