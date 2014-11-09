@@ -15,7 +15,7 @@ module.exports = function(config) {
         'bower_components/angular/angular.js',
         'bower_components/angular-mocks/angular-mocks.js',
         'src/client/js/**/*.js',
-        'src/client/test/**/*.js'
+        'src/client/tests/**/*.js'
     ],
 
     // list of files to exclude
