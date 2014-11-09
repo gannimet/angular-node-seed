@@ -2,7 +2,14 @@
 	.col-xs-12
 		h1 {{entry.title}}
 		.author
-			| Written by {{entry.author.name}}
+			| Written by 
+			a(href='mailto:{{entry.author.email') {{entry.author.name}}
+			|  at {{entry.createdAt | date: 'dd.MM.yyyy, HH:mm'}}
 		p {{entry.text}}
+		ul(data-ng-show='comments.length > 0')
+			li(data-ng-repeat='comment in comments')
+				a(href='mailto:{{comment.author.email}}') {{comment.author.name}}
+				|  ({{comment.createdAt | date: 'dd.MM.yyyy, HH:mm'}}):
+				p {{comment.text}}
 		footer
 			a(href='/blog') back to entry list

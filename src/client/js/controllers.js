@@ -11,8 +11,13 @@
 	blogControllers.controller('EntryCtrl', ['$scope', 'entryService', '$routeParams',
 			function($scope, entryService, $routeParams) {
 		var entryID = $routeParams.entryID;
+
 		entryService.entryByID(entryID).then(function(result) {
 			$scope.entry = result.data.entry;
+		});
+
+		entryService.commentsByEntryID(entryID).then(function(result) {
+			$scope.comments = result.data.comments;
 		});
 	}]);
 

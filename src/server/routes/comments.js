@@ -38,7 +38,7 @@ module.exports = {
 
 				for (i = 0; i < commentsForEntry.length; i++) {
 					var authorID = commentsForEntry[i].author;
-					commentsForEntry.author = usersMap[authorID];
+					commentsForEntry[i].author = usersMap[authorID];
 				}
 
 				res.status(200).json({

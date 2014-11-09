@@ -18,6 +18,10 @@
 
 			entryByID: function(entryID) {
 				return $http.get('/api/entry/' + entryID);
+			},
+
+			commentsByEntryID: function(entryID) {
+				return $http.get('/api/entry/' + entryID + '/comments');
 			}
 		};
 	}]);
