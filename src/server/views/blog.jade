@@ -1,6 +1,10 @@
 .row
 	.col-xs-12
 		h1 All entries
+
+		// Entry list
+		.entries-section-title
+			| There are {{entries.length | numberOfEntries}} so far
 		ul
 			li(data-ng-repeat='entry in entries')
 				a(href=('/entry/{{entry.id}}')) {{entry.title}} (by {{entry.author.name}})

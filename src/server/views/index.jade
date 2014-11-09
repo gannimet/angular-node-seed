@@ -19,6 +19,16 @@ html(data-ng-app='blogApp')
 			.row
 				.col-xs-12
 					.view-frame(data-ng-view)
+			.row
+				.col-xs-12
+					.panel.panel-default.credits-panel
+						.panel-body
+							p
+								| Powered by 
+								a(href='http://angularjs.org') Angular.js
+								|  & 
+								a(href='http://nodejs.org') node.js
+
 
 		script(type='text/javascript', src='/js/jquery.min.js')
 		script(type='text/javascript', src='/js/bootstrap.min.js')

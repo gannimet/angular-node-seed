@@ -4,16 +4,26 @@
 
 	blogFilters.filter('numberOfComments', function() {
 		return function(commentsCount) {
-			if (commentsCount < 1) {
-				return 'No comments yet';
-			}
-
-			if (commentsCount === 1) {
-				return '1 comment:';
-			}
-
-			return commentsCount + ' comments:';
+			return prettyPrint(commentsCount, 'comment', 'comments');
 		};
 	});
+
+	blogFilters.filter('numberOfEntries', function() {
+		return function(entriesCount) {
+			return prettyPrint(entriesCount, 'entry', 'entries');
+		};
+	});
+
+	function prettyPrint(number, singular, plural) {
+		if (number < 1) {
+			return 'No ' + plural + ' yet';
+		}
+
+		if (number === 1) {
+			return '1 ' + singular;
+		}
+
+		return number + ' ' + plural;
+	}
 
 })(window);
