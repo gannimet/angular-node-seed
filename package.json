@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "express": "^4.10.0",
-    "jade": "^1.7.0"
+    "jade": "^1.7.0",
+    "nodemon": "~1.2.1"
   }
 }
