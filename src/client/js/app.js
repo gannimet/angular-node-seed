@@ -2,6 +2,7 @@
 
 	var blogApp = angular.module('blogApp', [
 		'ngRoute',
+		'ngAnimate',
 		'blogFilters',
 		'blogControllers',
 		'blogServices',

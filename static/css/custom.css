@@ -12,3 +12,10 @@ h1 {
 .credits-panel {
   margin-top: 20px;
 }
+.slide-animation.ng-enter {
+  transition: 0.5s linear all;
+  opacity: 0;
+}
+.slide-animation.ng-enter-active {
+  opacity: 1;
+}

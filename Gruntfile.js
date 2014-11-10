@@ -69,6 +69,17 @@ module.exports = function(grunt) {
 						flatten: true
 					}
 				]
+			},
+			angular_animate: {
+				files: [
+					{
+						expand: true,
+						cwd: 'bower_components/angular-animate/',
+						src: ['angular-animate.min.js', 'angular-animate.min.js.map'],
+						dest: 'static/js/',
+						flatten: true
+					}
+				]
 			}
 		},
 		jshint: {

@@ -18,7 +18,7 @@ html(data-ng-app='blogApp')
 		.container
 			.row
 				.col-xs-12
-					.view-frame(data-ng-view)
+					.view-frame(data-ng-view, class='slide-animation')
 			.row
 				.col-xs-12
 					.panel.panel-default.credits-panel
@@ -33,5 +33,6 @@ html(data-ng-app='blogApp')
 		script(type='text/javascript', src='/js/bootstrap.min.js')
 		script(type='text/javascript', src='/js/angular.min.js')
 		script(type='text/javascript', src='/js/angular-route.min.js')
+		script(type='text/javascript', src='/js/angular-animate.min.js')
 		script(type='text/javascript', src='/js/alertify.min.js')
 		script(type='text/javascript', src='/js/blogApp.min.js')
